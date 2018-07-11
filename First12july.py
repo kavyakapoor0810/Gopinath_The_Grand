@@ -202,6 +202,9 @@ txtTotalCost = Entry(f1, font=('arial', 16, 'bold'), textvariable=Total, bd=10, 
                      justify='right')
 txtTotalCost.grid(row=5, column=3)
 
+btnprice=Button(f1,padx=16,pady=8, bd=16 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="Price",
+                bg="powder blue",command=price).grid(row=7, column=0)
+
 btnTotal = Button(f1, padx=16, pady=8, bd=16, fg="black", font=('arial', 16, 'bold'), width=10, text="Total",
                   bg="powder blue", command=Ref).grid(row=7, column=1)
 
@@ -211,7 +214,9 @@ btnReset = Button(f1, padx=16, pady=8, bd=16, fg="black", font=('arial', 16, 'bo
 btnExit = Button(f1, padx=16, pady=8, bd=16, fg="black", font=('arial', 16, 'bold'), width=10, text="Exit",
                  bg="powder blue", command=qExit).grid(row=7, column=3)
 
-btnprice=Button(f1,padx=16,pady=8, bd=10 ,fg="black",font=('ariel' ,16,'bold'),width=10, text="PRICE", bg="powder blue",command=price)
-btnprice.grid(row=7, column=0)
+btnCalc = Button(f1, padx=16, pady=8, bd=16, fg="black", font=('arial', 16, 'bold'), width=10, text="Calculator",
+                 bg="powder blue").grid(row=7, column=4)
+
+
 
 root.mainloop()
