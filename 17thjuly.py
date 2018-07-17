@@ -25,35 +25,35 @@ LABEL = Label(Tops, font=('arial', 10, 'bold'), text=localtime, fg="royal blue",
 
 table=sqlite3.connect("kavyakapoor.db")
 #change table name
-table.execute('''CREATE TABLE BILL12
-     (ORDERNO INTEGER PRIMARY KEY AUTOINCREMENT ,
-      NAME CHAR(50) ,
-      PHONE INT ,
-      CHEESEBALLS REAL,
-      FRENCHFRIES REAL,
-      DRYMAUNCHURIAN REAL,
-      HONEYCHILLIPOTATO REAL,
-      CLASSICGREEKSALAD REAL,
-      CLASSICCHICKENTIKKA REAL,
-      TOMATOSOUP REAL,
-      GNGSPECIALSOUP REAL,
-      BBQPANNER REAL,
-      GREENTHAI REAL,
-      CHILLIMUSHROOM REAL,
-      CHILLIPANNER REAL,
-      BIRYANI REAL,
-      BUTTERCHICKEN REAL,
-      PRANTHA REAL,
-      NAAN REAL,
-      ICECREAM REAL,
-      VELVETCAKE REAL,
-      DRINKS REAL,
-      COST REAL,
-      SERVICE REAL,
-      TAX REAL,
-      SUBTOTAL REAL,
-      TOTAL REAL);''')
-table.commit()
+# table.execute('''CREATE TABLE BILLING
+#      (ORDERNO INTEGER PRIMARY KEY AUTOINCREMENT ,
+#       NAME CHAR(50) ,
+#       PHONE INT ,
+#       CHEESEBALLS REAL,
+#       FRENCHFRIES REAL,
+#       DRYMAUNCHURIAN REAL,
+#       HONEYCHILLIPOTATO REAL,
+#       CLASSICGREEKSALAD REAL,
+#       CLASSICCHICKENTIKKA REAL,
+#       TOMATOSOUP REAL,
+#       GNGSPECIALSOUP REAL,
+#       BBQPANNER REAL,
+#       GREENTHAI REAL,
+#       CHILLIMUSHROOM REAL,
+#       CHILLIPANNER REAL,
+#       BIRYANI REAL,
+#       BUTTERCHICKEN REAL,
+#       PRANTHA REAL,
+#       NAAN REAL,
+#       ICECREAM REAL,
+#       VELVETCAKE REAL,
+#       DRINKS REAL,
+#       COST REAL,
+#       SERVICE REAL,
+#       TAX REAL,
+#       SUBTOTAL REAL,
+#       TOTAL REAL);''')
+# table.commit()
 
 #############################################################################################################################################
 
@@ -529,11 +529,11 @@ def bill():
     SubTotal.set(CostofMeal)
     Total.set(OverAllCost)
     # change table name
-    table.execute("INSERT INTO BILL12 (CHEESEBALLS ,FRENCHFRIES ,DRYMAUNCHURIAN ,HONEYCHILLIPOTATO ,CLASSICGREEKSALAD ,CLASSICCHICKENTIKKA ,TOMATOSOUP , GNGSPECIALSOUP ,BBQPANNER ,GREENTHAI ,CHILLIMUSHROOM ,CHILLIPANNER , BIRYANI ,BUTTERCHICKEN ,PRANTHA , NAAN ,ICECREAM ,VELVETCAKE ,DRINKS, COST,SERVICE,TAX ,SUBTOTAL ,TOTAL  ) VALUES(? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (str(Costofcheeseballs),str(Costoffrenchfries),str(Costofdrymaunchurian),str(Costofhoneychillipotato),str(Costofclassicgreeksalad),str(Costofclassicchickentikka),str(CostofCostoftomatosoup),str(Costofgngspecialsoup),str(Costofbbqpanner),str(Costofgreenthai),str(Costofchillimushroom),str(Costofchillipanner),str(Costofbiryani),str(Costofbutterchicken),str(Costofprantha),str(Costofnaan),str(Costoficecream),str(Costofvelvetcake),str(CostofDrinks),str(CostofMeal),str(Service),str(PaidTax ),str(TotalCost),str(OverAllCost)))
+    table.execute("INSERT INTO BILLING (CHEESEBALLS ,FRENCHFRIES ,DRYMAUNCHURIAN ,HONEYCHILLIPOTATO ,CLASSICGREEKSALAD ,CLASSICCHICKENTIKKA ,TOMATOSOUP , GNGSPECIALSOUP ,BBQPANNER ,GREENTHAI ,CHILLIMUSHROOM ,CHILLIPANNER , BIRYANI ,BUTTERCHICKEN ,PRANTHA , NAAN ,ICECREAM ,VELVETCAKE ,DRINKS, COST,SERVICE,TAX ,SUBTOTAL ,TOTAL  ) VALUES(? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (str(Costofcheeseballs),str(Costoffrenchfries),str(Costofdrymaunchurian),str(Costofhoneychillipotato),str(Costofclassicgreeksalad),str(Costofclassicchickentikka),str(CostofCostoftomatosoup),str(Costofgngspecialsoup),str(Costofbbqpanner),str(Costofgreenthai),str(Costofchillimushroom),str(Costofchillipanner),str(Costofbiryani),str(Costofbutterchicken),str(Costofprantha),str(Costofnaan),str(Costoficecream),str(Costofvelvetcake),str(CostofDrinks),str(CostofMeal),str(Service),str(PaidTax ),str(TotalCost),str(OverAllCost)))
 
     table.commit()
     # change table name
-    for i in table.execute("SELECT * FROM BILL12"):
+    for i in table.execute("SELECT * FROM BILLING"):
         print(i)
 
 
