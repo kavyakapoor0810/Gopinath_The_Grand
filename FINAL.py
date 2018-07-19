@@ -24,7 +24,6 @@ LABEL = Label(Tops, font=('arial', 10, 'bold'), text=localtime, fg="royal blue",
 ###########################################################################################################################################
 
 table=sqlite3.connect("kavya.db")
-#change table name
 # table.execute('''CREATE TABLE BILL
 #        (ORDERNO INTEGER PRIMARY KEY AUTOINCREMENT ,
 #         NAME CHAR(50) ,
@@ -528,11 +527,11 @@ def bill():
     Tax.set(PaidTax)
     SubTotal.set(CostofMeal)
     Total.set(OverAllCost)
-    # change table name
+
     table.execute("INSERT INTO BILL (CHEESEBALLS ,FRENCHFRIES ,DRYMAUNCHURIAN ,HONEYCHILLIPOTATO ,CLASSICGREEKSALAD ,CLASSICCHICKENTIKKA ,TOMATOSOUP , GNGSPECIALSOUP ,BBQPANNER ,GREENTHAI ,CHILLIMUSHROOM ,CHILLIPANNER , BIRYANI ,BUTTERCHICKEN ,PRANTHA , NAAN ,ICECREAM ,VELVETCAKE ,DRINKS, COST,SERVICE,TAX ,SUBTOTAL ,TOTAL  ) VALUES(? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (str(Costofcheeseballs),str(Costoffrenchfries),str(Costofdrymaunchurian),str(Costofhoneychillipotato),str(Costofclassicgreeksalad),str(Costofclassicchickentikka),str(CostofCostoftomatosoup),str(Costofgngspecialsoup),str(Costofbbqpanner),str(Costofgreenthai),str(Costofchillimushroom),str(Costofchillipanner),str(Costofbiryani),str(Costofbutterchicken),str(Costofprantha),str(Costofnaan),str(Costoficecream),str(Costofvelvetcake),str(CostofDrinks),str(CostofMeal),str(Service),str(PaidTax ),str(TotalCost),str(OverAllCost)))
 
     table.commit()
-    # change table name
+
     for i in table.execute("SELECT * FROM BILL"):
         print(i)
 
@@ -546,7 +545,7 @@ def bill():
         print("TAX=", row[5])
         print("SUBTOTAL=", row[6])
         print("TOTAL=", row[7], "\n")
-    print("operation done succesfully")
+    print("THANKYOU YOU !!")
     table.close()
 ##############################################################################################################################################################
 
