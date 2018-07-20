@@ -27,7 +27,7 @@ table=sqlite3.connect("kavya.db")
 # table.execute('''CREATE TABLE BILL
 #        (ORDERNO INTEGER PRIMARY KEY AUTOINCREMENT ,
 #         NAME CHAR(50) ,
-#         PHONE INT ,
+#         PHONE CHAR(50) ,
 #         CHEESEBALLS REAL,
 #         FRENCHFRIES REAL,
 #         DRYMAUNCHURIAN REAL,
@@ -527,11 +527,11 @@ def bill():
     Tax.set(PaidTax)
     SubTotal.set(CostofMeal)
     Total.set(OverAllCost)
-
-    table.execute("INSERT INTO BILL (CHEESEBALLS ,FRENCHFRIES ,DRYMAUNCHURIAN ,HONEYCHILLIPOTATO ,CLASSICGREEKSALAD ,CLASSICCHICKENTIKKA ,TOMATOSOUP , GNGSPECIALSOUP ,BBQPANNER ,GREENTHAI ,CHILLIMUSHROOM ,CHILLIPANNER , BIRYANI ,BUTTERCHICKEN ,PRANTHA , NAAN ,ICECREAM ,VELVETCAKE ,DRINKS, COST,SERVICE,TAX ,SUBTOTAL ,TOTAL  ) VALUES(? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (str(Costofcheeseballs),str(Costoffrenchfries),str(Costofdrymaunchurian),str(Costofhoneychillipotato),str(Costofclassicgreeksalad),str(Costofclassicchickentikka),str(CostofCostoftomatosoup),str(Costofgngspecialsoup),str(Costofbbqpanner),str(Costofgreenthai),str(Costofchillimushroom),str(Costofchillipanner),str(Costofbiryani),str(Costofbutterchicken),str(Costofprantha),str(Costofnaan),str(Costoficecream),str(Costofvelvetcake),str(CostofDrinks),str(CostofMeal),str(Service),str(PaidTax ),str(TotalCost),str(OverAllCost)))
+    name.set(name)
+    phone.set(phone)
+    table.execute("INSERT INTO BILL (NAME,PHONE,CHEESEBALLS ,FRENCHFRIES ,DRYMAUNCHURIAN ,HONEYCHILLIPOTATO ,CLASSICGREEKSALAD ,CLASSICCHICKENTIKKA ,TOMATOSOUP , GNGSPECIALSOUP ,BBQPANNER ,GREENTHAI ,CHILLIMUSHROOM ,CHILLIPANNER , BIRYANI ,BUTTERCHICKEN ,PRANTHA , NAAN ,ICECREAM ,VELVETCAKE ,DRINKS, COST,SERVICE,TAX ,SUBTOTAL ,TOTAL  ) VALUES(? ,?,? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ? ,?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", (str (name), str (phone), str(Costofcheeseballs),str(Costoffrenchfries),str(Costofdrymaunchurian),str(Costofhoneychillipotato),str(Costofclassicgreeksalad),str(Costofclassicchickentikka),str(CostofCostoftomatosoup),str(Costofgngspecialsoup),str(Costofbbqpanner),str(Costofgreenthai),str(Costofchillimushroom),str(Costofchillipanner),str(Costofbiryani),str(Costofbutterchicken),str(Costofprantha),str(Costofnaan),str(Costoficecream),str(Costofvelvetcake),str(CostofDrinks),str(CostofMeal),str(Service),str(PaidTax ),str(TotalCost),str(OverAllCost)))
 
     table.commit()
-
     for i in table.execute("SELECT * FROM BILL"):
         print(i)
 
